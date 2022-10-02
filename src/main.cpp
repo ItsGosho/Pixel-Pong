@@ -73,6 +73,10 @@ void drawInitialRightTile(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t t
     }
 
     display.display();
+
+    Point tileHead{tileStartingPosition, (uint8_t) (tileCenter - ((tileSize / 2) - 1))};
+    Point tileTail{tileStartingPosition, (uint8_t) (tileCenter + ((tileSize / 2) - 1))};
+    rightTile = Tile{tileHead, tileTail};
 }
 
 //starting logic
@@ -81,12 +85,16 @@ void drawInitialTiles(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t tileM
     drawInitialRightTile(display, tileSize, tileMargin);
 }
 
-void testClearLeftTile(Adafruit_SSD1306& display) {
+void testClearTile(Adafruit_SSD1306& display, Tile tile) {
 
-    for (uint8_t i = leftTile.head.y; i <= leftTile.tail.y; ++i) {
-        display.drawPixel(leftTile.head.x, i, BLACK);
+    for (uint8_t i = tile.head.y; i <= tile.tail.y; ++i) {
+        display.drawPixel(tile.head.x, i, BLACK);
         display.display();
+        delay(500);
     }
+
+    tile.head.y = tile.head.x;
+    tile.tail.y = tile.head.x;
 }
 
 /*TODO: Mark the head and tail for the left/right tails. (Try to calculate them after the cycle or before not update every cycle)
@@ -107,7 +115,8 @@ void setup() {
     drawBorders(display);
     drawInitialTiles(display, TILE_SIZE, TILE_MARGIN);
 
-    testClearLeftTile(display);
+    testClearTile(display, leftTile);
+    testClearTile(display, rightTile);
 }
 
 void loop() {
