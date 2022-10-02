@@ -8,8 +8,10 @@
 #define OLED_WIDTH 128
 #define OLED_HEIGHT 32
 
-#define TILE_SIZE 10
+#define TILE_SIZE 7
+#define TILE_MARGIN 10
 
+//starting logic
 void drawBorders(Adafruit_SSD1306& display) {
     for (int16_t column = 0; column < OLED_WIDTH; ++column) {
         display.drawPixel(column, 0, WHITE);
@@ -24,6 +26,21 @@ void drawBorders(Adafruit_SSD1306& display) {
     display.display();
 }
 
+//starting logic
+void drawInitialTiles(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t tileMargin) {
+
+    // Center Position. tileSize / 2 up and down
+
+    uint8_t tileCenter = OLED_HEIGHT / 2;
+    display.drawPixel(tileMargin, tileCenter, WHITE);
+
+    for (uint8_t i = 1; i < tileSize; ++i) {
+        display.drawPixel(tileMargin, tileCenter - i, WHITE);
+        display.drawPixel(tileMargin, tileCenter + i, WHITE);
+    }
+
+    display.display();
+}
 
 void setup() {
 
@@ -37,7 +54,7 @@ void setup() {
     display.clearDisplay();
 
     drawBorders(display);
-
+    drawInitialTiles(display, TILE_SIZE, TILE_MARGIN);
 
 }
 
