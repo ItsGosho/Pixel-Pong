@@ -11,6 +11,11 @@
 #define TILE_SIZE 7
 #define TILE_MARGIN 10
 
+uint8_t leftTileHead;
+uint8_t leftTileTail;
+uint8_t rightTileHead;
+uint8_t rightTileTail;
+
 //starting logic
 void drawBorders(Adafruit_SSD1306& display) {
     for (int16_t column = 0; column < OLED_WIDTH; ++column) {
@@ -26,20 +31,42 @@ void drawBorders(Adafruit_SSD1306& display) {
     display.display();
 }
 
-//starting logic
-void drawInitialTiles(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t tileMargin) {
+void drawInitialLeftTile(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t tileMargin) {
 
-    // Center Position. tileSize / 2 up and down
 
     uint8_t tileCenter = OLED_HEIGHT / 2;
-    display.drawPixel(tileMargin, tileCenter, WHITE);
+    uint8_t tileStartingPosition = 0 + tileMargin;
+
+    display.drawPixel(tileStartingPosition, tileCenter, WHITE);
 
     for (uint8_t i = 1; i < tileSize; ++i) {
-        display.drawPixel(tileMargin, tileCenter - i, WHITE);
-        display.drawPixel(tileMargin, tileCenter + i, WHITE);
+        display.drawPixel(tileStartingPosition, tileCenter - i, WHITE);
+        display.drawPixel(tileStartingPosition, tileCenter + i, WHITE);
     }
 
     display.display();
+}
+
+void drawInitialRightTile(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t tileMargin) {
+
+
+    uint8_t tileCenter = OLED_HEIGHT / 2;
+    uint8_t tileStartingPosition = OLED_WIDTH - tileMargin;
+
+    display.drawPixel(tileStartingPosition, tileCenter, WHITE);
+
+    for (uint8_t i = 1; i < tileSize; ++i) {
+        display.drawPixel(tileStartingPosition, tileCenter - i, WHITE);
+        display.drawPixel(tileStartingPosition, tileCenter + i, WHITE);
+    }
+
+    display.display();
+}
+
+//starting logic
+void drawInitialTiles(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t tileMargin) {
+    drawInitialLeftTile(display, tileSize, tileMargin);
+    drawInitialRightTile(display, tileSize, tileMargin);
 }
 
 void setup() {
