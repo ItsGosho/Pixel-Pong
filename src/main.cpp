@@ -135,6 +135,16 @@ void moveTile(Adafruit_SSD1306& display, Tile& tile, uint8_t direction) {
     }
 }
 
+//TODO: Check if top or bottom has been reached. Take in case the border!
+bool hasReachedBorder(Tile& tile) {
+    if (tile.head.y <= 0)
+        return true;
+    else if (tile.tail.y >= (OLED_HEIGHT - 2)) // -2 Because we must take the border also
+        return true;
+    else
+        return false;
+}
+
 /*TODO: Mark the head and tail for the left/right tails. (Try to calculate them after the cycle or before not update every cycle)
  * Make a mocked button logic.
  * On each button press implement the logic from the excali
@@ -157,7 +167,20 @@ void setup() {
     /*testClearTile(display, leftTile);
     testClearTile(display, rightTile);*/
 
-    for (int i = 0; i < 5; ++i) {
+    /*for (int i = 0; i < 5; ++i) {
+        moveTile(display, leftTile, DOWN);
+        delay(1000);
+    }*/
+
+    //TODO: Until a border is reached. Then start moving in oposite direction
+    while (true) {
+
+        if (hasReachedBorder(leftTile)) {
+
+        } else {
+
+        }
+
         moveTile(display, leftTile, DOWN);
         delay(1000);
     }
