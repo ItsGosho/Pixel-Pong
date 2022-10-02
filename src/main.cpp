@@ -14,6 +14,9 @@
 #define UP 0
 #define DOWN 1
 
+#define BTN_LEFT_TILE_PIN 21
+#define BTN_RIGHT_TILE_PIN 22
+
 struct Point {
     uint8_t x;
     uint8_t y;
@@ -22,10 +25,13 @@ struct Point {
 struct Tile {
     Point head;
     Point tail;
+    uint8_t direction;
 };
 
 Tile leftTile;
 Tile rightTile;
+
+Adafruit_SSD1306 oledDisplay;
 
 //starting logic
 void drawBorders(Adafruit_SSD1306& display) {
@@ -59,7 +65,7 @@ void drawInitialLeftTile(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t ti
 
     Point tileHead{tileStartingPosition, (uint8_t) (tileCenter - ((tileSize / 2) - 1))};
     Point tileTail{tileStartingPosition, (uint8_t) (tileCenter + ((tileSize / 2) - 1))};
-    leftTile = Tile{tileHead, tileTail};
+    leftTile = Tile{tileHead, tileTail, UP};
 }
 
 void drawInitialRightTile(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t tileMargin) {
@@ -79,7 +85,7 @@ void drawInitialRightTile(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t t
 
     Point tileHead{tileStartingPosition, (uint8_t) (tileCenter - ((tileSize / 2) - 1))};
     Point tileTail{tileStartingPosition, (uint8_t) (tileCenter + ((tileSize / 2) - 1))};
-    rightTile = Tile{tileHead, tileTail};
+    rightTile = Tile{tileHead, tileTail, UP};
 }
 
 //starting logic
@@ -135,7 +141,6 @@ void moveTile(Adafruit_SSD1306& display, Tile& tile, uint8_t direction) {
     }
 }
 
-//TODO: Check if top or bottom has been reached. Take in case the border!
 bool hasReachedBorder(Tile& tile) {
     if (tile.head.y <= 1) //1 Because we must take the border also
         return true;
@@ -145,6 +150,14 @@ bool hasReachedBorder(Tile& tile) {
         return false;
 }
 
+void moveTile(Adafruit_SSD1306& display, Tile& tile) {
+    if (hasReachedBorder(leftTile)) {
+        tile.direction = tile.direction == UP ? DOWN : UP;
+    }
+
+    moveTile(display, leftTile, tile.direction);
+}
+
 /*TODO: Mark the head and tail for the left/right tails. (Try to calculate them after the cycle or before not update every cycle)
  * Make a mocked button logic.
  * On each button press implement the logic from the excali
@@ -152,17 +165,20 @@ bool hasReachedBorder(Tile& tile) {
 void setup() {
     Serial.begin(9600);
 
+    pinMode(BTN_LEFT_TILE_PIN, INPUT);
+    pinMode(BTN_RIGHT_TILE_PIN, INPUT);
+
     Wire.setPins(OLED_SDA_PIN, OLED_SCL_PIN);
 
-    Adafruit_SSD1306 display(OLED_WIDTH, OLED_HEIGHT, &Wire);
-    display.begin(SSD1306_SWITCHCAPVCC, 0x3C);
+    oledDisplay = Adafruit_SSD1306(OLED_WIDTH, OLED_HEIGHT, &Wire);
+    oledDisplay.begin(SSD1306_SWITCHCAPVCC, 0x3C);
 
     delay(2000);
 
-    display.clearDisplay();
+    oledDisplay.clearDisplay();
 
-    drawBorders(display);
-    drawInitialTiles(display, TILE_SIZE, TILE_MARGIN);
+    drawBorders(oledDisplay);
+    drawInitialTiles(oledDisplay, TILE_SIZE, TILE_MARGIN);
 
     /*testClearTile(display, leftTile);
     testClearTile(display, rightTile);*/
@@ -172,18 +188,42 @@ void setup() {
         delay(1000);
     }*/
 
-    //TODO: Until a border is reached. Then start moving in oposite direction
-    uint8_t movingDirection = UP;
-    while (true) {
+    /* while (true) {
+         moveTile(display, leftTile);
+         delay(1000);
+     }*/
+}
 
-        if (hasReachedBorder(leftTile)) {
-            movingDirection = movingDirection == UP ? DOWN : UP;
-        }
 
-        moveTile(display, leftTile, movingDirection);
-        delay(1000);
+uint8_t btnLeftTileLastState = 0;
+uint8_t btnRightTileLastState = 0;
+
+bool isButtonPressed(uint8_t buttonPin, uint8_t& lastStateVariable) {
+    if (digitalRead(buttonPin) && lastStateVariable == 0) {
+        lastStateVariable = 1;
+        return true;
+    } else if (!digitalRead(buttonPin) && lastStateVariable == 1) {
+        lastStateVariable = 0;
     }
+
+    return false;
 }
 
 void loop() {
+
+    bool isLeftButtonPressed = isButtonPressed(BTN_LEFT_TILE_PIN, btnLeftTileLastState);
+
+    if (isLeftButtonPressed) {
+        Serial.println("Left move!");
+        moveTile(oledDisplay, leftTile);
+    }
+
+
+    bool isRightButtonPressed = isButtonPressed(BTN_RIGHT_TILE_PIN, btnRightTileLastState);
+
+    if (isRightButtonPressed) {
+        Serial.println("Right move!");
+        moveTile(oledDisplay, rightTile);
+    }
+
 }
