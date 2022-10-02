@@ -81,6 +81,14 @@ void drawInitialTiles(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t tileM
     drawInitialRightTile(display, tileSize, tileMargin);
 }
 
+void testClearLeftTile(Adafruit_SSD1306& display) {
+
+    for (uint8_t i = leftTile.head.y; i <= leftTile.tail.y; ++i) {
+        display.drawPixel(leftTile.head.x, i, BLACK);
+        display.display();
+    }
+}
+
 /*TODO: Mark the head and tail for the left/right tails. (Try to calculate them after the cycle or before not update every cycle)
  * Make a mocked button logic.
  * On each button press implement the logic from the excali
@@ -99,6 +107,7 @@ void setup() {
     drawBorders(display);
     drawInitialTiles(display, TILE_SIZE, TILE_MARGIN);
 
+    testClearLeftTile(display);
 }
 
 void loop() {
