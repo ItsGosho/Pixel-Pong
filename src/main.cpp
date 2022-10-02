@@ -137,7 +137,7 @@ void moveTile(Adafruit_SSD1306& display, Tile& tile, uint8_t direction) {
 
 //TODO: Check if top or bottom has been reached. Take in case the border!
 bool hasReachedBorder(Tile& tile) {
-    if (tile.head.y <= 0)
+    if (tile.head.y <= 1) //1 Because we must take the border also
         return true;
     else if (tile.tail.y >= (OLED_HEIGHT - 2)) // -2 Because we must take the border also
         return true;
@@ -173,15 +173,14 @@ void setup() {
     }*/
 
     //TODO: Until a border is reached. Then start moving in oposite direction
+    uint8_t movingDirection = UP;
     while (true) {
 
         if (hasReachedBorder(leftTile)) {
-
-        } else {
-
+            movingDirection = movingDirection == UP ? DOWN : UP;
         }
 
-        moveTile(display, leftTile, DOWN);
+        moveTile(display, leftTile, movingDirection);
         delay(1000);
     }
 }
