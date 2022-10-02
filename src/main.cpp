@@ -11,6 +11,9 @@
 #define TILE_SIZE 14
 #define TILE_MARGIN 10
 
+#define UP 0
+#define DOWN 1
+
 struct Point {
     uint8_t x;
     uint8_t y;
@@ -85,7 +88,7 @@ void drawInitialTiles(Adafruit_SSD1306& display, uint8_t tileSize, uint8_t tileM
     drawInitialRightTile(display, tileSize, tileMargin);
 }
 
-void testClearTile(Adafruit_SSD1306& display, Tile tile) {
+void testClearTile(Adafruit_SSD1306& display, Tile& tile) {
 
     for (uint8_t i = tile.head.y; i <= tile.tail.y; ++i) {
         display.drawPixel(tile.head.x, i, BLACK);
@@ -97,11 +100,47 @@ void testClearTile(Adafruit_SSD1306& display, Tile tile) {
     tile.tail.y = tile.head.x;
 }
 
+void moveTileUp(Adafruit_SSD1306& display, Tile& tile) {
+    display.drawPixel(tile.head.x, tile.head.y - 1, WHITE);
+    display.drawPixel(tile.head.x, tile.tail.y, BLACK);
+
+    display.display();
+
+    tile.head.y = tile.head.y - 1;
+    tile.tail.y = tile.tail.y - 1;
+}
+
+void moveTileDown(Adafruit_SSD1306& display, Tile& tile) {
+    display.drawPixel(tile.head.x, tile.head.y, BLACK);
+    display.drawPixel(tile.head.x, tile.tail.y + 1, WHITE);
+
+    display.display();
+
+    tile.head.y = tile.head.y + 1;
+    tile.tail.y = tile.tail.y + 1;
+}
+
+void moveTile(Adafruit_SSD1306& display, Tile& tile, uint8_t direction) {
+
+    switch (direction) {
+        case 0:
+            moveTileUp(display, tile);
+            break;
+        case 1:
+            moveTileDown(display, tile);
+            break;
+        default:
+            Serial.println("Warning. Direction not implemented!");
+            break;
+    }
+}
+
 /*TODO: Mark the head and tail for the left/right tails. (Try to calculate them after the cycle or before not update every cycle)
  * Make a mocked button logic.
  * On each button press implement the logic from the excali
  * */
 void setup() {
+    Serial.begin(9600);
 
     Wire.setPins(OLED_SDA_PIN, OLED_SCL_PIN);
 
@@ -115,8 +154,13 @@ void setup() {
     drawBorders(display);
     drawInitialTiles(display, TILE_SIZE, TILE_MARGIN);
 
-    testClearTile(display, leftTile);
-    testClearTile(display, rightTile);
+    /*testClearTile(display, leftTile);
+    testClearTile(display, rightTile);*/
+
+    for (int i = 0; i < 5; ++i) {
+        moveTile(display, leftTile, DOWN);
+        delay(1000);
+    }
 }
 
 void loop() {
