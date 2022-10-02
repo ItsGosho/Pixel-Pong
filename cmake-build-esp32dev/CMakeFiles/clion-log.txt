@@ -1,0 +1,4 @@
+C:\Users\Gosho\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-1\212.5457.51\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=esp32dev -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" C:\Users\Gosho\Desktop\GitHub\Pong-Pong
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/Users/Gosho/Desktop/GitHub/Pong-Pong/cmake-build-esp32dev
