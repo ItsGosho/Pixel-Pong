@@ -394,6 +394,30 @@ Z_DUMMY_TARGET/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.s
 .PHONY : .pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.s
 
+lib/ButtonEnhanced/ButtonEnhanced.obj: lib/ButtonEnhanced/ButtonEnhanced.cpp.obj
+.PHONY : lib/ButtonEnhanced/ButtonEnhanced.obj
+
+# target to build an object file
+lib/ButtonEnhanced/ButtonEnhanced.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.obj
+.PHONY : lib/ButtonEnhanced/ButtonEnhanced.cpp.obj
+
+lib/ButtonEnhanced/ButtonEnhanced.i: lib/ButtonEnhanced/ButtonEnhanced.cpp.i
+.PHONY : lib/ButtonEnhanced/ButtonEnhanced.i
+
+# target to preprocess a source file
+lib/ButtonEnhanced/ButtonEnhanced.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.i
+.PHONY : lib/ButtonEnhanced/ButtonEnhanced.cpp.i
+
+lib/ButtonEnhanced/ButtonEnhanced.s: lib/ButtonEnhanced/ButtonEnhanced.cpp.s
+.PHONY : lib/ButtonEnhanced/ButtonEnhanced.s
+
+# target to generate assembly for a file
+lib/ButtonEnhanced/ButtonEnhanced.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Z_DUMMY_TARGET.dir\build.make CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.s
+.PHONY : lib/ButtonEnhanced/ButtonEnhanced.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -459,6 +483,9 @@ help:
 	@echo ... .pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.obj
 	@echo ... .pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.i
 	@echo ... .pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.s
+	@echo ... lib/ButtonEnhanced/ButtonEnhanced.obj
+	@echo ... lib/ButtonEnhanced/ButtonEnhanced.i
+	@echo ... lib/ButtonEnhanced/ButtonEnhanced.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s

@@ -156,6 +156,7 @@
 					<Add directory="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit BusIO"/>
 					<Add directory="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit GFX Library"/>
 					<Add directory="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit SSD1306"/>
+					<Add directory="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/lib/ButtonEnhanced"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
@@ -279,6 +280,7 @@
 					<Add directory="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit BusIO"/>
 					<Add directory="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit GFX Library"/>
 					<Add directory="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit SSD1306"/>
+					<Add directory="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/lib/ButtonEnhanced"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32"/>
 					<Add directory="C:/Program Files/mingw-w64/x86_64-8.1.0-posix-seh-rt_v6-rev0/mingw64/bin/../lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward"/>
@@ -665,6 +667,12 @@
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit SSD1306/splash.h">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/lib/ButtonEnhanced/ButtonEnhanced.cpp">
+			<Option target="Z_DUMMY_TARGET"/>
+		</Unit>
+		<Unit filename="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/lib/ButtonEnhanced/ButtonEnhanced.h">
 			<Option target="Z_DUMMY_TARGET"/>
 		</Unit>
 		<Unit filename="C:/Users/Gosho/Desktop/GitHub/Pong-Pong/src/main.cpp">

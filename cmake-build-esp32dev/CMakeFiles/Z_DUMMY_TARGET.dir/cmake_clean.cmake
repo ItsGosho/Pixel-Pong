@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/fontconvert/fontconvert.c.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/glcdfont.c.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.obj"
+  "CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.obj"
   "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
   "Z_DUMMY_TARGET"
   "Z_DUMMY_TARGET.manifest"

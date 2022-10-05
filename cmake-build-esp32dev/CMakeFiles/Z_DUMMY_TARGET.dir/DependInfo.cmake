@@ -118,6 +118,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
   "../.pio/libdeps/esp32dev/Adafruit BusIO"
   "../.pio/libdeps/esp32dev/Adafruit GFX Library"
   "../.pio/libdeps/esp32dev/Adafruit SSD1306"
+  "../lib/ButtonEnhanced"
   )
 set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit BusIO/Adafruit_BusIO_Register.cpp" "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/cmake-build-esp32dev/CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_BusIO_Register.cpp.obj"
@@ -128,6 +129,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit GFX Library/Adafruit_SPITFT.cpp" "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/cmake-build-esp32dev/CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_SPITFT.cpp.obj"
   "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit GFX Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp" "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/cmake-build-esp32dev/CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp.obj"
   "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/.pio/libdeps/esp32dev/Adafruit SSD1306/Adafruit_SSD1306.cpp" "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/cmake-build-esp32dev/CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.obj"
+  "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/lib/ButtonEnhanced/ButtonEnhanced.cpp" "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/cmake-build-esp32dev/CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.obj"
   "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/src/main.cpp" "C:/Users/Gosho/Desktop/GitHub/Pong-Pong/cmake-build-esp32dev/CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -236,6 +238,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../.pio/libdeps/esp32dev/Adafruit BusIO"
   "../.pio/libdeps/esp32dev/Adafruit GFX Library"
   "../.pio/libdeps/esp32dev/Adafruit SSD1306"
+  "../lib/ButtonEnhanced"
   )
 
 # The set of dependency files which are needed:

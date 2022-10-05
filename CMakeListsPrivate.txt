@@ -133,6 +133,7 @@ if (CMAKE_BUILD_TYPE MATCHES "esp32dev")
         include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/esp32dev/Adafruit BusIO")
         include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/esp32dev/Adafruit GFX Library")
         include_directories("${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/esp32dev/Adafruit SSD1306")
+        include_directories("${CMAKE_CURRENT_LIST_DIR}/lib/ButtonEnhanced")
 
     FILE(GLOB_RECURSE EXTRA_LIB_SOURCES
         ${CMAKE_CURRENT_LIST_DIR}/.pio/libdeps/esp32dev/*.*

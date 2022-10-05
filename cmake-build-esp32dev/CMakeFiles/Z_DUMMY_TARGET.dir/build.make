@@ -65,9 +65,22 @@ include CMakeFiles/Z_DUMMY_TARGET.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 
+CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
+CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.obj: ../lib/ButtonEnhanced/ButtonEnhanced.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.obj"
+	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\lib\ButtonEnhanced\ButtonEnhanced.cpp.obj -c C:\Users\Gosho\Desktop\GitHub\Pong-Pong\lib\ButtonEnhanced\ButtonEnhanced.cpp
+
+CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.i"
+	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Gosho\Desktop\GitHub\Pong-Pong\lib\ButtonEnhanced\ButtonEnhanced.cpp > CMakeFiles\Z_DUMMY_TARGET.dir\lib\ButtonEnhanced\ButtonEnhanced.cpp.i
+
+CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.s"
+	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Gosho\Desktop\GitHub\Pong-Pong\lib\ButtonEnhanced\ButtonEnhanced.cpp -o CMakeFiles\Z_DUMMY_TARGET.dir\lib\ButtonEnhanced\ButtonEnhanced.cpp.s
+
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\src\main.cpp.obj -c C:\Users\Gosho\Desktop\GitHub\Pong-Pong\src\main.cpp
 
 CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.i: cmake_force
@@ -80,7 +93,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.s: cmake_force
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_BusIO_Register.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_BusIO_Register.cpp.obj: ../.pio/libdeps/esp32dev/Adafruit\ BusIO/Adafruit_BusIO_Register.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_BusIO_Register.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_BusIO_Register.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_BusIO\Adafruit_BusIO_Register.cpp.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit BusIO\Adafruit_BusIO_Register.cpp"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_BusIO_Register.cpp.i: cmake_force
@@ -93,7 +106,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_BusI
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_I2CDevice.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_I2CDevice.cpp.obj: ../.pio/libdeps/esp32dev/Adafruit\ BusIO/Adafruit_I2CDevice.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_I2CDevice.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_I2CDevice.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_BusIO\Adafruit_I2CDevice.cpp.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit BusIO\Adafruit_I2CDevice.cpp"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_I2CDevice.cpp.i: cmake_force
@@ -106,7 +119,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_I2CD
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_SPIDevice.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_SPIDevice.cpp.obj: ../.pio/libdeps/esp32dev/Adafruit\ BusIO/Adafruit_SPIDevice.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_SPIDevice.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_SPIDevice.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_BusIO\Adafruit_SPIDevice.cpp.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit BusIO\Adafruit_SPIDevice.cpp"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_SPIDevice.cpp.i: cmake_force
@@ -119,7 +132,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_SPID
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GFX.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GFX.cpp.obj: ../.pio/libdeps/esp32dev/Adafruit\ GFX\ Library/Adafruit_GFX.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GFX.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GFX.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_GFX_Library\Adafruit_GFX.cpp.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit GFX Library\Adafruit_GFX.cpp"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GFX.cpp.i: cmake_force
@@ -132,7 +145,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafrui
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GrayOLED.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GrayOLED.cpp.obj: ../.pio/libdeps/esp32dev/Adafruit\ GFX\ Library/Adafruit_GrayOLED.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GrayOLED.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GrayOLED.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_GFX_Library\Adafruit_GrayOLED.cpp.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit GFX Library\Adafruit_GrayOLED.cpp"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_GrayOLED.cpp.i: cmake_force
@@ -145,7 +158,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafrui
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_SPITFT.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_SPITFT.cpp.obj: ../.pio/libdeps/esp32dev/Adafruit\ GFX\ Library/Adafruit_SPITFT.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_SPITFT.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_SPITFT.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_GFX_Library\Adafruit_SPITFT.cpp.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit GFX Library\Adafruit_SPITFT.cpp"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafruit_SPITFT.cpp.i: cmake_force
@@ -158,7 +171,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/Adafrui
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp.obj: ../.pio/libdeps/esp32dev/Adafruit\ GFX\ Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_GFX_Library\examples\GFXcanvas\GFXcanvasSerialDemo.cpp.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit GFX Library\examples\GFXcanvas\GFXcanvasSerialDemo.cpp"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/examples/GFXcanvas/GFXcanvasSerialDemo.cpp.i: cmake_force
@@ -171,7 +184,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/example
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/fontconvert/fontconvert.c.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/fontconvert/fontconvert.c.obj: ../.pio/libdeps/esp32dev/Adafruit\ GFX\ Library/fontconvert/fontconvert.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/fontconvert/fontconvert.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/fontconvert/fontconvert.c.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_GFX_Library\fontconvert\fontconvert.c.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit GFX Library\fontconvert\fontconvert.c"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/fontconvert/fontconvert.c.i: cmake_force
@@ -184,7 +197,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/fontcon
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/glcdfont.c.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/glcdfont.c.obj: ../.pio/libdeps/esp32dev/Adafruit\ GFX\ Library/glcdfont.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/glcdfont.c.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/glcdfont.c.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_GFX_Library\glcdfont.c.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit GFX Library\glcdfont.c"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/glcdfont.c.i: cmake_force
@@ -197,7 +210,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX_Library/glcdfon
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.obj: CMakeFiles/Z_DUMMY_TARGET.dir/flags.make
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.obj: ../.pio/libdeps/esp32dev/Adafruit\ SSD1306/Adafruit_SSD1306.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.obj"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.obj"
 	C:\Users\Gosho\.platformio\packages\toolchain-xtensa32\bin\xtensa-esp32-elf-g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\Z_DUMMY_TARGET.dir\.pio\libdeps\esp32dev\Adafruit_SSD1306\Adafruit_SSD1306.cpp.obj -c "C:\Users\Gosho\Desktop\GitHub\Pong-Pong\.pio\libdeps\esp32dev\Adafruit SSD1306\Adafruit_SSD1306.cpp"
 
 CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.i: cmake_force
@@ -210,6 +223,7 @@ CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SS
 
 # Object files for target Z_DUMMY_TARGET
 Z_DUMMY_TARGET_OBJECTS = \
+"CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_BusIO_Register.cpp.obj" \
 "CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_I2CDevice.cpp.obj" \
@@ -225,6 +239,7 @@ Z_DUMMY_TARGET_OBJECTS = \
 # External object files for target Z_DUMMY_TARGET
 Z_DUMMY_TARGET_EXTERNAL_OBJECTS =
 
+Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/lib/ButtonEnhanced/ButtonEnhanced.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/src/main.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_BusIO_Register.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_BusIO/Adafruit_I2CDevice.cpp.obj
@@ -238,7 +253,7 @@ Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_GFX
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/.pio/libdeps/esp32dev/Adafruit_SSD1306/Adafruit_SSD1306.cpp.obj
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/build.make
 Z_DUMMY_TARGET: CMakeFiles/Z_DUMMY_TARGET.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable Z_DUMMY_TARGET"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\Gosho\Desktop\GitHub\Pong-Pong\cmake-build-esp32dev\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Z_DUMMY_TARGET"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\Z_DUMMY_TARGET.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,6 +1,7 @@
 #include "Arduino.h"
 #include <Wire.h>
 #include <Adafruit_SSD1306.h>
+#include "ButtonEnhanced.h"
 
 #define OLED_SDA_PIN 27
 #define OLED_SCL_PIN 26
@@ -32,6 +33,9 @@ Tile leftTile;
 Tile rightTile;
 
 Adafruit_SSD1306 oledDisplay;
+
+ButtonEnhanced leftTileBtn;
+ButtonEnhanced rightTileBtn;
 
 //starting logic
 void drawBorders(Adafruit_SSD1306& display) {
@@ -151,11 +155,11 @@ bool hasReachedBorder(Tile& tile) {
 }
 
 void moveTile(Adafruit_SSD1306& display, Tile& tile) {
-    if (hasReachedBorder(leftTile)) {
+    if (hasReachedBorder(tile)) {
         tile.direction = tile.direction == UP ? DOWN : UP;
     }
 
-    moveTile(display, leftTile, tile.direction);
+    moveTile(display, tile, tile.direction);
 }
 
 /*TODO: Mark the head and tail for the left/right tails. (Try to calculate them after the cycle or before not update every cycle)
@@ -165,8 +169,11 @@ void moveTile(Adafruit_SSD1306& display, Tile& tile) {
 void setup() {
     Serial.begin(9600);
 
-    pinMode(BTN_LEFT_TILE_PIN, INPUT);
-    pinMode(BTN_RIGHT_TILE_PIN, INPUT);
+    leftTileBtn = ButtonEnhanced{BTN_LEFT_TILE_PIN};
+    leftTileBtn.setHoldNotificationMs(50);
+
+    rightTileBtn = ButtonEnhanced{BTN_RIGHT_TILE_PIN};
+    rightTileBtn.setHoldNotificationMs(50);
 
     Wire.setPins(OLED_SDA_PIN, OLED_SCL_PIN);
 
@@ -194,34 +201,16 @@ void setup() {
      }*/
 }
 
-
-uint8_t btnLeftTileLastState = 0;
-uint8_t btnRightTileLastState = 0;
-
-bool isButtonPressed(uint8_t buttonPin, uint8_t& lastStateVariable) {
-    if (digitalRead(buttonPin) && lastStateVariable == 0) {
-        lastStateVariable = 1;
-        return true;
-    } else if (!digitalRead(buttonPin) && lastStateVariable == 1) {
-        lastStateVariable = 0;
-    }
-
-    return false;
-}
-
+/*TODO: If the button is hold move the tile each 100 ms. Find the sweat spot.*/
 void loop() {
 
-    bool isLeftButtonPressed = isButtonPressed(BTN_LEFT_TILE_PIN, btnLeftTileLastState);
 
-    if (isLeftButtonPressed) {
+    if(leftTileBtn.isShot() || leftTileBtn.isHold()) {
         Serial.println("Left move!");
         moveTile(oledDisplay, leftTile);
     }
 
-
-    bool isRightButtonPressed = isButtonPressed(BTN_RIGHT_TILE_PIN, btnRightTileLastState);
-
-    if (isRightButtonPressed) {
+    if(rightTileBtn.isShot() || rightTileBtn.isHold()) {
         Serial.println("Right move!");
         moveTile(oledDisplay, rightTile);
     }
