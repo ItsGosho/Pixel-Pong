@@ -204,13 +204,12 @@ void setup() {
 /*TODO: If the button is hold move the tile each 100 ms. Find the sweat spot.*/
 void loop() {
 
-
-    if(leftTileBtn.isShot() || leftTileBtn.isHold()) {
+    if (leftTileBtn.isShot() || leftTileBtn.isHold()) {
         Serial.println("Left move!");
         moveTile(oledDisplay, leftTile);
     }
 
-    if(rightTileBtn.isShot() || rightTileBtn.isHold()) {
+    if (rightTileBtn.isShot() || rightTileBtn.isHold()) {
         Serial.println("Right move!");
         moveTile(oledDisplay, rightTile);
     }
