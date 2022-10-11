@@ -26,8 +26,8 @@ namespace itsgosho {
         TL = 0, TC = 1, TR = 2, RC = 3, C = 4, LC = 5, BL = 6, BC = 7, OP_BR = 8
     };
 
-    template <size_t size>
-    Direction getRandomDirection(const Direction (&directions)[size]) {
+    template<size_t size>
+    Direction getRandomDirection(const Direction (& directions)[size]) {
         return directions[random(0, size)];
     }
 
@@ -104,13 +104,23 @@ namespace itsgosho {
 
         void setHeight(const uint8_t& height);
 
+        uint8_t getWidth() const;
+
+        uint8_t getHeight() const;
+
+        InnerPoint getInnerPoint() const;
+
+        /**
+         * Will clear the given object from the display.
+         * Note that you can redraw() it.
+         */
+        void clear();
+
     private:
         uint8_t width;
         uint8_t height;
         Adafruit_SSD1306* ssd1306;
         InnerPoint innerPoint;
-
-        bool isDraw;
 
         Point calculateDrawPointTL(const Point& point) const;
 

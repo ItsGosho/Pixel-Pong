@@ -1,5 +1,7 @@
 #include "ButtonEnhanced.h"
 
+using namespace itsgosho;
+
 ButtonEnhanced::ButtonEnhanced() {
 }
 
