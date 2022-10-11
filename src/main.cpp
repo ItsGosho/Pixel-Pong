@@ -60,11 +60,6 @@ PixelBall* pixelBall;
 unsigned long ballSpeedUS;
 unsigned long lastTimeCheckUS;
 
-template <size_t size>
-Direction getRandomDirection(const Direction (&directions)[size]) {
-    return directions[random(0, size)];
-}
-
 void initialize() {
     oledDisplay->clearDisplay();
 
