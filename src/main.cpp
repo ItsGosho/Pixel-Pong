@@ -60,6 +60,11 @@ PixelBall* pixelBall;
 unsigned long ballSpeedUS;
 unsigned long lastTimeCheckUS;
 
+template <size_t size>
+Direction getRandomDirection(const Direction (&directions)[size]) {
+    return directions[random(0, size)];
+}
+
 void initialize() {
     oledDisplay->clearDisplay();
 
@@ -86,7 +91,7 @@ void initialize() {
     pixelBallObject->draw({OLED_WIDTH / 2, OLED_HEIGHT / 2}, InnerPosition::C);
 
 
-    pixelBall = new PixelBall(pixelBallObject, static_cast<Direction>(random(2, 4))/*Random: LEFT/RIGHT*/);
+    pixelBall = new PixelBall(pixelBallObject, getRandomDirection({LEFT,RIGHT}));
 
     oledDisplay->display();
 
@@ -136,7 +141,7 @@ void loop() {
         case Direction::LEFT:
 
             if (pixelBall->object->isLeftMoveCollision(*tileLeftObject)) {
-                pixelBall->direction = static_cast<Direction>(random(6, 8)/*Random: RIGHT_UP/RIGHT_DOWN*/);
+                pixelBall->direction = getRandomDirection({RIGHT_UP,RIGHT_DOWN});
             }
 
             break;
@@ -144,7 +149,7 @@ void loop() {
         case Direction::RIGHT:
 
             if (pixelBall->object->isRightMoveCollision(*tileRightObject)) {
-                pixelBall->direction = static_cast<Direction>(random(4, 6)/*Random: LEFT_UP/LEFT_DOWN*/);
+                pixelBall->direction = getRandomDirection({LEFT_UP,LEFT_DOWN});
             }
 
             break;
@@ -157,8 +162,7 @@ void loop() {
             }
 
             if (pixelBall->object->isRightUpMoveCollision(*tileRightObject)) {
-                Direction directions[2] = {LEFT_UP, LEFT};
-                pixelBall->direction = directions[random(0, 2)];
+                pixelBall->direction = getRandomDirection({LEFT_UP, LEFT});
                 break;
             }
 
@@ -170,8 +174,7 @@ void loop() {
             }
 
             if (pixelBall->object->isLeftUpMoveCollision(*tileLeftObject)) {
-                Direction directions[2] = {RIGHT_UP, RIGHT};
-                pixelBall->direction = directions[random(0, 2)];
+                pixelBall->direction = getRandomDirection({RIGHT_UP, RIGHT});
                 break;
             }
 
@@ -183,8 +186,7 @@ void loop() {
             }
 
             if (pixelBall->object->isRightDownMoveCollision(*tileRightObject)) {
-                Direction directions[2] = {LEFT_DOWN, LEFT};
-                pixelBall->direction = directions[random(0, 2)];
+                pixelBall->direction = getRandomDirection({LEFT_DOWN, LEFT});
                 break;
             }
 
@@ -196,8 +198,7 @@ void loop() {
             }
 
             if (pixelBall->object->isRightDownMoveCollision(*tileLeftObject)) {
-                Direction directions[2] = {RIGHT_DOWN, RIGHT};
-                pixelBall->direction = directions[random(0, 2)];
+                pixelBall->direction = getRandomDirection({RIGHT_DOWN, RIGHT});
                 break;
             }
     }
