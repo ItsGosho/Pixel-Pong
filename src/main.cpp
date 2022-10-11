@@ -138,6 +138,9 @@ void moveTile(Tile* tile) {
     tile->object->move(tile->direction);
 }
 
+unsigned long ballSpeedUS = 10000; //10MS
+unsigned long lastTimeCheckUS = micros();
+
 void loop() {
 
     if (leftTileBtn.isShot() || leftTileBtn.isHold()) {
@@ -221,7 +224,9 @@ void loop() {
             }
     }
 
-    pixelBall->object->move(pixelBall->direction);
-    oledDisplay->display();
-    delay(75);
+    if (micros() - lastTimeCheckUS >= ballSpeedUS) {
+        pixelBall->object->move(pixelBall->direction);
+        oledDisplay->display();
+        lastTimeCheckUS = micros();
+    }
 }
