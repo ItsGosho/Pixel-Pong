@@ -26,6 +26,16 @@ struct Tile {
     }
 };
 
+struct PixelBall {
+    TwoDRObject* object;
+    Direction direction;
+
+    PixelBall(TwoDRObject* object, Direction direction) {
+        this->object = object;
+        this->direction = direction;
+    }
+};
+
 Adafruit_SSD1306* oledDisplay;
 
 ButtonEnhanced leftTileBtn;
@@ -38,8 +48,11 @@ TwoDRObject* bottomBorderObject;
 TwoDRObject* leftBorderObject;
 TwoDRObject* rightBorderObject;
 
+TwoDRObject* pixelBallObject;
+
 Tile* tileLeft;
 Tile* tileRight;
+PixelBall* pixelBall;
 
 void setup() {
     Serial.begin(9600);
@@ -76,8 +89,11 @@ void setup() {
     leftBorderObject->draw({0, 1}, InnerPosition::TL);
     rightBorderObject->draw({OLED_WIDTH - 1, 1}, InnerPosition::TL);
 
-    TwoDRObject pixelBall = TwoDRObject(5, 5, oledDisplay);
-    pixelBall.draw({OLED_WIDTH / 2, OLED_HEIGHT / 2}, InnerPosition::C);
+    pixelBallObject = new TwoDRObject(5, 5, oledDisplay);
+    pixelBallObject->draw({OLED_WIDTH / 2, OLED_HEIGHT / 2}, InnerPosition::C);
+
+
+    pixelBall = new PixelBall(pixelBallObject, static_cast<Direction>(random(2, 4))/*Random: LEFT/RIGHT*/);
 
     oledDisplay->display();
 
@@ -133,4 +149,79 @@ void loop() {
         moveTile(tileRight);
         oledDisplay->display();
     }
+
+    switch (pixelBall->direction) {
+
+        case Direction::LEFT:
+
+            if (pixelBall->object->isLeftMoveCollision(*tileLeftObject)) {
+                pixelBall->direction = static_cast<Direction>(random(6, 8)/*Random: RIGHT_UP/RIGHT_DOWN*/);
+            }
+
+            break;
+
+        case Direction::RIGHT:
+
+            if (pixelBall->object->isRightMoveCollision(*tileRightObject)) {
+                pixelBall->direction = static_cast<Direction>(random(4, 6)/*Random: LEFT_UP/LEFT_DOWN*/);
+            }
+
+            break;
+
+        case Direction::RIGHT_UP:
+
+            if (pixelBall->object->isRightUpMoveCollision(*topBorderObject)) {
+                pixelBall->direction = Direction::RIGHT_DOWN;
+                break;
+            }
+
+            if (pixelBall->object->isRightUpMoveCollision(*tileRightObject)) {
+                Direction directions[2] = {LEFT_UP, LEFT};
+                pixelBall->direction = directions[random(0, 2)];
+                break;
+            }
+
+        case Direction::LEFT_UP:
+
+            if (pixelBall->object->isLeftUpMoveCollision(*topBorderObject)) {
+                pixelBall->direction = Direction::LEFT_DOWN;
+                break;
+            }
+
+            if (pixelBall->object->isLeftUpMoveCollision(*tileLeftObject)) {
+                Direction directions[2] = {RIGHT_UP, RIGHT};
+                pixelBall->direction = directions[random(0, 2)];
+                break;
+            }
+
+        case Direction::RIGHT_DOWN:
+
+            if (pixelBall->object->isRightDownMoveCollision(*bottomBorderObject)) {
+                pixelBall->direction = Direction::RIGHT_UP;
+                break;
+            }
+
+            if (pixelBall->object->isRightDownMoveCollision(*tileRightObject)) {
+                Direction directions[2] = {LEFT_DOWN, LEFT};
+                pixelBall->direction = directions[random(0, 2)];
+                break;
+            }
+
+        case Direction::LEFT_DOWN:
+
+            if (pixelBall->object->isRightDownMoveCollision(*bottomBorderObject)) {
+                pixelBall->direction = Direction::LEFT_UP;
+                break;
+            }
+
+            if (pixelBall->object->isRightDownMoveCollision(*tileLeftObject)) {
+                Direction directions[2] = {RIGHT_DOWN, RIGHT};
+                pixelBall->direction = directions[random(0, 2)];
+                break;
+            }
+    }
+
+    pixelBall->object->move(pixelBall->direction);
+    oledDisplay->display();
+    delay(75);
 }
