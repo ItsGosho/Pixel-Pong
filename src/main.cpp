@@ -15,6 +15,9 @@ using namespace itsgosho;
 #define BTN_LEFT_TILE_PIN 21
 #define BTN_RIGHT_TILE_PIN 22
 
+//10MS
+#define BALL_SPEED_US 10000
+
 
 struct Tile {
     TwoDRObject* object;
@@ -54,20 +57,10 @@ Tile* tileLeft;
 Tile* tileRight;
 PixelBall* pixelBall;
 
-void setup() {
-    Serial.begin(9600);
+unsigned long ballSpeedUS;
+unsigned long lastTimeCheckUS;
 
-    leftTileBtn = ButtonEnhanced{BTN_LEFT_TILE_PIN};
-    leftTileBtn.setHoldNotificationMs(50);
-
-    rightTileBtn = ButtonEnhanced{BTN_RIGHT_TILE_PIN};
-    rightTileBtn.setHoldNotificationMs(50);
-
-    Wire.setPins(OLED_SDA_PIN, OLED_SCL_PIN);
-
-    oledDisplay = new Adafruit_SSD1306(OLED_WIDTH, OLED_HEIGHT, &Wire);
-    oledDisplay->begin(SSD1306_SWITCHCAPVCC, 0x3C);
-
+void initialize() {
     oledDisplay->clearDisplay();
 
     tileLeftObject = new TwoDRObject(3, 11, oledDisplay);
@@ -97,37 +90,25 @@ void setup() {
 
     oledDisplay->display();
 
-    /*bool isDiagonalRandomTime = false;
+    ballSpeedUS = BALL_SPEED_US;
+    lastTimeCheckUS = micros();
+}
 
-    Direction currentDirection;
+void setup() {
+    Serial.begin(9600);
 
-    while (true) {
-        if (isDiagonalRandomTime) {
-            currentDirection = static_cast<Direction>(random(4, 8));
-        } else {
-            currentDirection = static_cast<Direction>(random(0, 4));
-        }
+    leftTileBtn = ButtonEnhanced{BTN_LEFT_TILE_PIN};
+    leftTileBtn.setHoldNotificationMs(50);
 
-        while (!pixelBall.isMoveCollision(topBorderObject, currentDirection) && !pixelBall.isMoveCollision(bottomBorderObject, currentDirection) && !pixelBall.isMoveCollision(leftBorderObject, currentDirection) && !pixelBall.isMoveCollision(rightBorderObject, currentDirection) && !pixelBall.isMoveCollision(tileLeftObject, currentDirection) && !pixelBall.isMoveCollision(tileRightObject, currentDirection)) {
+    rightTileBtn = ButtonEnhanced{BTN_RIGHT_TILE_PIN};
+    rightTileBtn.setHoldNotificationMs(50);
 
-            if (!pixelBall.isFront(tileLeftObject) && !pixelBall.isBehind(tileLeftObject)) {
-                Serial.println("Left lose!");
-                return;
-            }
+    Wire.setPins(OLED_SDA_PIN, OLED_SCL_PIN);
 
-            if (!tileRightObject.isFront(pixelBall) && !tileRightObject.isBehind(pixelBall)) {
-                Serial.println("Right lose!");
-                return;
-            }
+    oledDisplay = new Adafruit_SSD1306(OLED_WIDTH, OLED_HEIGHT, &Wire);
+    oledDisplay->begin(SSD1306_SWITCHCAPVCC, 0x3C);
 
-            pixelBall.move(currentDirection);
-            oledDisplay.display();
-            delayMicroseconds(500);
-        }
-
-        isDiagonalRandomTime = !isDiagonalRandomTime;
-    }*/
-
+    initialize();
 }
 
 void moveTile(Tile* tile) {
@@ -137,9 +118,6 @@ void moveTile(Tile* tile) {
 
     tile->object->move(tile->direction);
 }
-
-unsigned long ballSpeedUS = 10000; //10MS
-unsigned long lastTimeCheckUS = micros();
 
 void loop() {
 
@@ -222,6 +200,16 @@ void loop() {
                 pixelBall->direction = directions[random(0, 2)];
                 break;
             }
+    }
+
+    if (!pixelBall->object->isFront(*tileLeftObject) && !pixelBall->object->isBehind(*tileLeftObject)) {
+        Serial.println("Left lose!");
+        initialize();
+    }
+
+    if (!tileRightObject->isFront(*pixelBall->object) && !tileRightObject->isBehind(*pixelBall->object)) {
+        Serial.println("Right lose!");
+        initialize();
     }
 
     if (micros() - lastTimeCheckUS >= ballSpeedUS) {
