@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+
+/.idea
+/.pio
+cmake-build-debug
+cmake-build-esp32dev
+include
+test
+CMakeListsPrivate.txt
+CMakeLists.txt

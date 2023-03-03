@@ -1,0 +1,12 @@
+- Solo & Versus Mode:
+- Increase the speed of the ball with the passing time.
+
+- Versus Mode:
+Play only with the left tile.
+
+- Buttons:
+- Two more buttons under the main ones. For moving the ball up or down
+- One more button for switching between modes. (Solo or Versus)
+
+
+- Countdown timer after initialization. (3 seconds) before the given mode begins.
